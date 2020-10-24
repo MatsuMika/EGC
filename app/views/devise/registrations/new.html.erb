@@ -1,55 +1,83 @@
-<div class = "container">
-  <div class = "row">
-    <div class ="col-md-10 offset-md-2">
-      <h2>新規登録</h2>
-    </div>
+<div class = "row">
+  <div class ="col-md-5 offset-md-4">
+    <h4>新規登録</h4>
   </div>
+</div>
 
-  <div class = "row">
-    <div class ="col-md">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-          <div class="field">
-            <%= f.label :氏名 %><br />
-            <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-          </div>
+    <div class="field">
+      <div class = "row">
+        <div class ="col-md-1 offset-md-3 text-right">
+          <h5 class="fas fa-user"></h5>
+        </div>
+        <div class ="col-md-5">
+          <%= f.text_field :name, class: "form-control", autofocus: true, placeholder:"氏名", autocomplete: "name" %>
+        </div>
+      </div>
+    </div>
 
-          <div class="field">
-            <%= f.label :ニックネーム %><br />
-            <%= f.text_field :nick_name, autofocus: true, autocomplete: "nick_name" %>
-          </div>
+    <div class="field">
+      <div class = "row">
+        <div class ="col-md-1 offset-md-3 text-right">
+          <h5 class="fas fa-paw"></h5>
+        </div>
+        <div class ="col-md-5">
+          <%= f.text_field :nick_name, class: "form-control", placeholder:"ニックネーム", autocomplete: "nick_name" %>
+        </div>
+      </div>
+    </div>
 
-          <div class="field">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autocomplete: "email" %>
-          </div>
+    <div class="field">
+      <div class = "row">
+        <div class ="col-md-1 offset-md-3 text-right">
+          <h5 class="fas fa-envelope"></h5>
+        </div>
+        <div class ="col-md-5">
+          <%= f.email_field :email, class: "form-control", placeholder:"Eメール", autocomplete: "email" %>
+        </div>
+      </div>
+    </div>
 
-          <div class="field">
-            <%= f.label :パスワード %>
+    <div class="field">
+      <div class = "row">
+        <div class ="col-md-1 offset-md-3 text-right">
+          <h5 class="fas fa-lock"></h5>
+        </div>
+        <div class ="col-md-5">
             <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> 桁以上)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password" %>
+            <% end %>
+            <%= f.password_field :password, class: "form-control", placeholder:"パスワード(6文字以上)", autocomplete: "new-password" %>
           </div>
+        </div>
+      </div>
 
-          <div class="field">
-            <%= f.label :パスワード確認 %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <div class="field">
+        <div class = "row">
+          <div class ="col-md-1 offset-md-3 text-right">
+            <h5 class="fas fa-lock"></h5>
           </div>
-    </div>
-    <div class ="col-md-3">
-    <!--新規登録ボタン-->
+          <div class ="col-md-5">
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder:"パスワード確認", autocomplete: "new-password" %>
+          </div>
+        </div>
+      </div>
+
+  <!--新規登録ボタン-->
+      <div class = "row">
+        <div class ="col-md-5 offset-md-4 ">
           <div class="actions">
-            <%= f.submit "新規登録",class: "btn btn-success btn-block" %>
+            <%= f.submit "新規登録",class: "btn btn-primary btn-block" %>
           </div>
-        <% end %>
-    </div>
+        </div>
+      </div>
 
-        <%= render "devise/shared/links" %>
+  <% end %>
 
-    </div>
-  </div>
-
+<div class = "row">
+  <div class ="col-md-5 offset-md-4 text-center">
+  <%= render "devise/shared/links" %>
+</div>
 </div>

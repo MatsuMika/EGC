@@ -10,6 +10,55 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar-expand-lg navbar-dark bg-dark p-3">
+        <div class="collapse navbar-collapse">
+          <%= link_to "E.G.C.", root_path, class: "navbar-brand" %>
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <!--サインインとアウト時の表示を変更-->
+            <% if user_signed_in? %>
+
+              <li class="nav-item">
+                <%= link_to 'トップ', root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'E.G.C.？', homes_about_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '作品一覧', posts_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'マイページ', user_path(current_user), class: "nav-link" %>
+              </li>
+
+            <% else %>
+              <li class="nav-item">
+                <%= link_to 'トップ', root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'E.G.C.？', homes_about_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '新規登録', new_user_registration_path, class: "nav-link" %></li>
+              <li class="nav-item">
+                <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
+                </li>
+
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+  <!--/ヘッダー-->
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

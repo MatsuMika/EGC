@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-	root 'home#top'
-	get 'home/about'
+	root 'homes#top'
+	get 'homes/about'
+
+	resources :users, only: [:show, :edit, :update]
 end
