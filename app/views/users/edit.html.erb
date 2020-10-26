@@ -1,0 +1,24 @@
+<h4>アカウント編集</h4>
+
+<%= form_with(model:@user, local:true) do |f| %>
+
+  <div class="field">
+    <%= f.label :プロフール画像 %>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="field">
+    <%= f.label :アカウント名 %>
+    <%= f.text_field :nick_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :自己紹介 %>
+    <%= f.text_field :introduction %>
+  </div>
+
+  <div class="row">
+<div class="actions">
+    <%= f.submit '保存する' %>
+  </div>
+<% end %>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action :ensure_correct_user, only: [:edit, :update]
 
+	# マイページ
   def show
   	@user = User.find(params[:id])
   end
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+    	@user = User.find(params[:id])
       redirect_to user_path(@user), notice: "successfully updated user!"
     else
       render "edit"
@@ -20,7 +22,7 @@ class UsersController < ApplicationController
 	private
 
 		def user_params
-		params.require(:user).permit(:name, :email, :nick_name, :introduction, :profile_image)
+		params.require(:user).permit(:name, :email, :nick_name, :introduction, :avatar)
 		end
 
 		def ensure_correct_user
