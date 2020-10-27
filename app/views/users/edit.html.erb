@@ -1,24 +1,44 @@
-<h4>アカウント編集</h4>
+<div class = "row">
+  <div class ="col-md-5 offset-md-3">
+    <h4>アカウント編集</h4>
+  </div>
+</div>
 
 <%= form_with(model:@user, local:true) do |f| %>
 
   <div class="field">
-    <%= f.label :プロフール画像 %>
-    <%= f.file_field :avatar %>
+    <div class = "row">
+      <div class ="col-md-6 offset-md-3">
+        <%= f.label :アカウント画像 %>
+        <%= f.file_field :avatar, class:"form-control-file" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :アカウント名 %>
-    <%= f.text_field :nick_name %>
+    <div class = "row">
+      <div class ="col-md-4 offset-md-3">
+        <%= f.label :アカウント名 %>
+        <%= f.text_field :nick_name, class:"form-control" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :自己紹介 %>
-    <%= f.text_field :introduction %>
+    <div class = "row">
+      <div class ="col-md-6 offset-md-3">
+       <%= f.label :自己紹介 %>
+        <%= f.text_field :introduction, class:"form-control", rows:"3"%>
+      </div>
+    </div>
   </div>
 
   <div class="row">
-<div class="actions">
-    <%= f.submit '保存する' %>
+    <div class ="col-md-1 offset-md-8 ">
+      <div class="actions">
+        <%= f.submit '保存', class: "btn btn-primary btn-block" %>
+      </div>
+    </div>
   </div>
+
 <% end %>
