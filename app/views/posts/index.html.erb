@@ -1,2 +1,26 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="row">
+  <div class ="col-md-5 offset-md-1">
+    <h2>作品一覧</h2>
+  </div>
+</div>
+
+<div class="posts-card">
+  <% @posts.each do |post| %>
+    <div class="post"><%= post.title %></div>
+    <div class="post"><%= post.subtitle %></div>
+    <div class="post">
+      <%= image_tag post.post_image.thumb.url.to_s, :size =>'240x150' %>
+    </div>
+    <div class="post">
+      <%= image_tag post.user.avatar.thumb.url.to_s, :size =>'60x60' %>
+      <br><%= post.user.nick_name %>
+    </div>
+    <div><%= post.post_comments.count %>件コメント</div>
+    <div class="post">
+      <%= post.message %>
+    </div>
+    <div class="post">
+      <%= link_to "作品を見に行く", post_path(post.id), class: "user_#{post.user.id}" %>
+    </div>
+  <% end %>
+</div>

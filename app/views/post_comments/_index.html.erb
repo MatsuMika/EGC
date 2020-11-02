@@ -1,0 +1,22 @@
+<% post_comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+    <div class="comment-date"><%= l comment.created_at %>
+    </div>
+    <div class="row">
+      <div class ="col-md-3">
+        <div><%= image_tag comment.post.user.avatar.thumb.url.to_s, :size =>'50x50' %><br>
+          <%= link_to "#{comment.user.nick_name}", user_path(comment.user.id) %>
+        </div>
+      </div>
+      <div class ="col-md-9">
+        <div><%= comment.comment %>
+        </div>
+      </div>
+    </div>
+    <% if comment.user == current_user %>
+      <p><%= link_to 'コメントを削除する', post_post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %>
+      </p>
+    <% end %>
+
+  <% end %>
+<% end %>

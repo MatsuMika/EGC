@@ -1,51 +1,28 @@
-
-<!--カレントユーザーの場合-->
-<% if @user==current_user %>
-
+<div class="row">
+  <div class ="col-md-5 offset-md-1">
+      <h4><%= @user.nick_name %>さんのルーム</h4>
+  </div>
+</div>
   <div class="row">
-    <div class ="col-md-5 offset-md-1">
-      <h4>マイページ</h4>
+    <div class ="col-md-3 offset-md-1">
+       <%= image_tag @user.avatar.thumb.url.to_s, :size =>'150x150' %>
+    </div>
+
+    <div class="col-md-8">
+      <table class="table">
+          <tr>
+          <th>自己紹介</th>
+            <th><%= @user.introduction %></th>
+          </tr>
+      </table>
     </div>
   </div>
 
-      <div class="row">
-        <div class ="col-md-3 offset-md-1">
-           <%= image_tag current_user.avatar.thumb.url.to_s, :size =>'150x150' %>
-        </div>
-
-        <div class="col-md-8">
-            <table class="table">
-                <tr>
-                  <th><%= current_user.nick_name %></th>
-                  <th></th>
-                </tr>
-
-                <tr>
-                  <th>自己紹介</th>
-                  <th><%= current_user.introduction %></th>
-                </tr>
-            </table>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class ="col-md-2 offset-md-7 text-center">
-          <%= link_to '編集する', edit_user_path(@user), class: "btn btn-primary btn-block edit_user_#{@user.id}" %>
-        </div>
+  <% if @user==current_user %>
+    <div class="row">
+      <div class ="col-md-2 offset-md-7 text-center">
+        <%= link_to '編集する', edit_user_path(@user), class: "btn btn-primary btn-block edit_user_#{@user.id}" %>
       </div>
     </div>
-
-    <!--その他のユーザーの場合-->
-    <% else %>
-
-        <h4>ユーザー詳細</h4>
-          <!--アバターが設定されている場合は、設定したアバターを表示-->
-          <% if user.avatar? %>
-             <img src='<%= user.avater %>' class="icon" alt="ユーザーアイコン">
-          <!--アバターが設定されていない場合はデフォルトを表示-->
-          <% else %>
-            <image src="/assets/default.png" class="icon" alt="ユーザーアイコン" %>
-          <% end %>
-          <%= user.nick_name %>
-          <%= user.introduction %>
-    <% end %>
+  <% end %>
+<row>

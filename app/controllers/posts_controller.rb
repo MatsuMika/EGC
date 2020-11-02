@@ -1,27 +1,30 @@
 class PostsController < ApplicationController
+	before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
 	def new
 		@post = Post.new
   end
 
+ 	def create
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    if @post.save
+      redirect_to posts_path, notice: "You have created book successfully."
+    else
+      render :index
+    end
+	end
+
   def index
   	@posts = Post.all
   end
 
   def show
-  	 @post = Post.find(params[:id])
-	end
-
- 	def create
-    @post = Post.new(post_params)
-    @post.user_id = current_user.id
-    if @post.save
-      redirect_to post_path
-    else
-      render :new
-    end
-	end
+  	@post = Post.find(params[:id])
+  	@post_comment = PostComment.new
+    @post_comments = @post.post_comments
+  end
 
   def edit
   end
