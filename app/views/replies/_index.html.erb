@@ -1,0 +1,39 @@
+<% comment.replies.each do |reply| %>
+  <% unless reply.id.nil? %>
+
+    <div class="row">
+      <div class ="col-md-8 offset-md-4">
+        <div class="row">
+          <div class ="col-md text-right">
+            <div class="comment-date"><%= l reply.created_at %>：返信
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class ="col-md-10 text-right">
+            <div><%= simple_format reply.comment %>
+            </div>
+          </div>
+          <div class ="col-md-2 text-center">
+            <div>
+              <%= link_to user_path(reply.user.id) do %>
+                <%= image_tag reply.user.avatar.thumb.url.to_s, :size =>'60x60' %>
+              <% end %>
+              <br><small><%= link_to "#{reply.user.nick_name}", user_path(reply.user.id) %></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% if reply.user == current_user %>
+      <div class="row">
+        <div class ="col-md text-right">
+          <p><%= link_to '削除', post_post_comment_reply_path(comment.post_id, comment.id, reply.id), method: :delete, remote: true, class: "btn btn-outline-danger btn-sm" %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+<% end %>

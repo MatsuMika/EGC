@@ -16,93 +16,104 @@
       <div class="row">
         <div class ="col-md">
           <div class="post-date">
-            <%= l @post.created_at %>
+            投稿日時：<%= l @post.created_at %>
           </div>
-          <h2>【 <%= @post.title %> 】</h2>
-          <h5><%= @post.subtitle %></h5>
-          <%= image_tag @post.post_image.thumb.url.to_s, :size =>'850x500' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class ="col-md text-center">
+          <h2><strong><%= @post.title %></strong></h2>
+          <h4><%= simple_format @post.subtitle %></h4>
+          <%= image_tag @post.post_image.thumb.url.to_s, :size =>'818x480' %>
         </div>
       </div>
 
       <div class="row">
         <div class ="col-md">
-          <%= link_to @post.portfolio_url %><br>
-          <small>＊ 作品画像下にURLがある場合は基本的に作品に直接アクセス可能ですが、作品にアクセス不可の場合は当ページが表示されます
-          </small>
+          <p><%= link_to @post.portfolio_url %><br>
+            <small>＊ 作品画像下にURLがある場合は基本的に作品に直接アクセス可能ですが、作品にアクセス不可の場合は当ページが表示されます
+            </small>
+          </p>
         </div>
       </div>
 
       <div class="row">
-        <div class ="col-md-6">
-          <%= image_tag @post.user.avatar.thumb.url.to_s, :size =>'80x80' %>
+        <div class ="col-md-2 text-right">
+          <%= link_to user_path(@post.user) do %>
+            <%= image_tag @post.user.avatar.thumb.url.to_s, :size =>'85x85' %>
+          <% end %>
+        </div>
+        <div class ="col-md-3">
           <%= @post.user.nick_name %>
         </div>
-        <div class ="col-md-6">
+        <div class ="col-md-7">
           コメント<%= @post.post_comments.count %>件
         </div>
       </div>
 
       <div class="row">
         <div class ="col-md">
-          <h6><strong>アピール</strong></h6>
-          <%= @post.body %>
+          <p><h6><strong>詳細：</strong></h6>
+            <%= simple_format @post.body %>
+          </p>
         </div>
       </div>
 
       <div class="row">
-        <div class ="col-md-7">
-          <h6><strong>ひとことmessage</strong></h6>
-          <%= @post.message %>
+        <div class ="col-md-8">
+          <p><h6><strong>ひとこと：</strong></h6>
+          <%= simple_format @post.message %>
+          </p>
         </div>
-        <div class ="col-md-5">
-          <h6><strong>開発環境</strong></h6>
-          <%= @development_environment_text %>
+        <div class ="col-md-4">
+          <p><h6><strong>開発環境</strong></h6>
+          <%= simple_format @post.development_environment_text %>
+          </p>
         </div>
       </div>
 
       <div class="row">
         <div class ="col-md">
-          <h6><strong>作品URL</strong></h6>
-            <%= link_to @post.portfolio_url %>
-            <h6><strong>ソースコード情報</strong></h6>
-            <%= link_to @post.source_code_url %>
+          <p><h6><strong>作品URL：</strong></h6>
+            <a href="<%= @post.portfolio_url %>"><%= @post.portfolio_url %>
+            </a>
+          </p>
+          <p><h6><strong>ソースコード情報：</strong></h6>
+            <a href="<%= @post.source_code_url %>"><%= @post.source_code_url %>
+            </a>
+          </p>
         </div>
       </div>
 
       <% if @post.user == current_user %>
           <div class="row">
-            <div class ="col-md">
-              <%= link_to "投稿を編集する", edit_post_path(@post), class: "btn btn-primary btn-block edit_post_#{@post.id}" %>
-            </div>
-          </div>
-          <div class="row">
             <div class ="col-md text-center">
-              or
-            </div>
-          </div>
-          <div class="row">
-            <div class ="col-md">
-              <%= link_to "投稿を削除する", post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger btn-block destroy_post_#{@post.id}" %>
+              <%= link_to "投稿を編集する", edit_post_path(@post), class: "btn btn-outline-primary btn-block edit_post_#{@post.id}" %>
+              <%= link_to "投稿を削除する", post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-outline-danger btn-block destroy_post_#{@post.id}" %>
             </div>
           </div>
       <% end %>
 
 
     <div class="row">
-      <div class ="col-md">
+      <div class ="col-md text-center">
         <h3>コメント/質問</h3>
-          <% if user_signed_in? %>
-            <%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post } %>
-          <% end %>
-          <div class="post_comments_area">
-            <%= render partial: 'post_comments/index', locals: { post_comments: @post_comments} %>
-          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class ="col-md">
+        <% if user_signed_in? %>
+          <%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post } %>
+        <% end %>
+        <div class="post_comments_area">
+          <%= render partial: 'post_comments/index', locals: { post_comments: @post_comments} %>
+        </div>
       </div>
     </div>
 
   </div>
 
-</div>
 </div>
 
 

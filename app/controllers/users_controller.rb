@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 	before_action :ensure_correct_user, only: [:edit, :update]
 
-	# マイページ
   def show
   	@user = User.find(params[:id])
+    @post = @post = Post.find(params[:id])
   end
 
   def edit

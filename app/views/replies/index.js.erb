@@ -1,0 +1,2 @@
+$(".reply_area_<%= @reply.post_comment.id %>").html("<%= j(render 'index', { comment: @reply.post_comment }) %>")
+$("textarea").val('')

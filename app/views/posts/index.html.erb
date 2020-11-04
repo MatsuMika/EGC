@@ -4,23 +4,28 @@
   </div>
 </div>
 
-<div class="posts-card">
+<div class="row">
   <% @posts.each do |post| %>
-    <div class="post"><%= post.title %></div>
-    <div class="post"><%= post.subtitle %></div>
-    <div class="post">
-      <%= image_tag post.post_image.thumb.url.to_s, :size =>'240x150' %>
+  <div class="col-sm-3">
+    <div class="posts-card">
+      <div class="post">
+        <%= image_tag post.post_image.thumb.url.to_s, :size =>'240x150' %>
+      </div>
+      <div class="post"><%= post.title %></div>
+      <div class="post"><%= post.subtitle %></div>
+      <div class="post">
+        <%= image_tag post.user.avatar.thumb.url.to_s, :size =>'40x40' %>
+        <%= post.user.nick_name %>
+      </div>
+      <div class="post">
+        ひとこと：<br><%= simple_format post.message %>
+      </div>
+      <div class="post">
+        <%= link_to "作品を見に行く", post_path(post.id), class: "user_#{post.user.id}" %>
+      </div>
+      <div>投稿日時：<%= l post.created_at %>
+      </div>
     </div>
-    <div class="post">
-      <%= image_tag post.user.avatar.thumb.url.to_s, :size =>'60x60' %>
-      <br><%= post.user.nick_name %>
-    </div>
-    <div><%= post.post_comments.count %>件コメント</div>
-    <div class="post">
-      <%= post.message %>
-    </div>
-    <div class="post">
-      <%= link_to "作品を見に行く", post_path(post.id), class: "user_#{post.user.id}" %>
-    </div>
+  </div>
   <% end %>
 </div>

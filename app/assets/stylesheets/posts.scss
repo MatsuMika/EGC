@@ -3,20 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .posts-card {
-	width: 100%;
-}
-
-article {
-	width: 240px;
 	margin: auto;
 	margin-bottom: 20px;
 	box-shadow: 0 0 5px #999;
+	text-color :white
 }
 
 .post {
-	margin-auto: 2%;
-	margin-bottom: 20px;
-	width: 100%;
+	margin: 8%;
 	border: 3px;
 	border-color: #999;
 }
