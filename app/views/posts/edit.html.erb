@@ -1,16 +1,18 @@
-<div class="row">
-  <div class ="col-md text-center">
-    <h2>編集フォーム</h2>
+<div class="container">
+  <div class="row">
+    <div class ="col-md text-center">
+      <h2>編集フォーム</h2>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class ="col-md-10 offset-md-1">
-    <%= form_with model:@post do |f| %>
-      <%= render partial: 'posts/form', locals: {f: f } %>
+  <div class="row">
+    <div class ="col-md-10 offset-md-1">
+      <%= form_with model:@post do |f| %>
+        <%= render partial: 'posts/form', locals: {f: f } %>
 
-        <h6>必須項目に漏れや誤字脱字はありませんか？投稿内容に間違いがないか最終確認が済みましたら 編集完了ボタンを押しましょう</h6>
-        <%= f.submit '編集完了', class: 'btn btn-info btn-block' %>
+          <h6>必須項目に漏れや誤字脱字はありませんか？投稿内容に間違いがないか最終確認が済みましたら 編集完了ボタンを押しましょう</h6>
+          <%= f.submit '編集完了', class: 'btn btn-info btn-block' %>
 
-    <% end %>
-</div>
+      <% end %>
+    </div>
+  </div>
 </div>

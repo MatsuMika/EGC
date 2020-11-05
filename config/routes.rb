@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'posts/index'
   get 'posts/show'
   get 'posts/edit'
@@ -12,8 +13,10 @@ Rails.application.routes.draw do
 	resources :users, only: [:show, :edit, :update]
 
 	resources :posts do
+    resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy] do
     resources :replies, only: [:create, :destroy]
     end
   end
+
 end

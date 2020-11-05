@@ -4,6 +4,7 @@ class RepliesController < ApplicationController
 	  @reply = @post_comment.replies.build(reply_params)
 	  @reply.user_id = current_user.id
 	  if @reply.save
+      NoticeMailer.with(post_comment_id:params[:post_comment_id]).reply_created.deliver_now
 	    render :index
 	   end
   end

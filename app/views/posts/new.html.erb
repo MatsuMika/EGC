@@ -1,73 +1,75 @@
-<div class="row">
-  <div class ="col-md text-center">
-    <h2 class=>投稿フォーム</h2>
-  </div>
-  </div>
-<div class="row">
-  <div class ="col-md-10 offset-md-1">
-    <%= form_with model:@post do |f| %>
+<div class="container">
+    <div class="row">
+      <div class ="col-md text-center">
+        <h2 class=>投稿フォーム</h2>
+      </div>
+      </div>
+    <div class="row">
+      <div class ="col-md-10 offset-md-1">
+        <%= form_with model:@post do |f| %>
 
-        <div class="form-group">
-            <%= f.label :title, '投稿タイトル（必須）' %><br>
-            <small id="title-tip" class="form-text text-muted">
-                作品名を入力してください！
-            </small>
-            <%= f.text_field :title, class: "form-control" %>
+            <div class="form-group">
+                <%= f.label :title, '投稿タイトル（必須）' %><br>
+                <small id="title-tip" class="form-text text-muted">
+                    作品名を入力してください！
+                </small>
+                <%= f.text_field :title, class: "form-control" %>
 
-        </div>
-        <div class="form-group">
-            <%= f.label :subtitle, 'サブタイトル（必須）' %><br>
-            <small id="subtitle-tip" class="form-text text-muted">
-                作品テーマを入力してください！（例：ポートフォリオを紹介するWebサイトです 等）
-            </small>
-            <%= f.text_area :subtitle, class: "form-control" %>
-        </div>
-        <div class="form-group">
-            <%= f.label :post_image, '作品画像（必須）' %><br>
-            <small id="post_image-tip" class="form-text text-muted">
-                渾身の一枚をアップロードしてください！！
-            </small>
-            <%= f.file_field :post_image %>
-        </div>
-        <div class="form-group">
-            <%= f.label :body, '投稿内容（必須）' %><br>
-            <small id="body-tip" class="form-text text-muted">
-                作品について自由にアピールしてください！！（例：背景・思い/どのような作品か/苦労したこと　等）
-            </small>
-            <%= f.text_area :body, class: "form-control", rows:20 %>
-        </div>
-        <div class="form-group">
-            <%= f.label :portfolio_url, '作品URL' %><br>
-            <small id="portfolio_url-tip" class="form-text text-muted">
-                作品のURLを公開してください！ (例：https://xxx.xx...)
-            </small>
-            <%= f.text_field :portfolio_url, class: "form-control" %>
-        </div>
-        <div class="form-group">
-            <%= f.label :source_code_url, 'ソースコードURL GitHubのリポジトリURL 等' %><br>
-            <small id="source_code_url-tip" class="form-text text-muted">
-                ソースコードが確認できるURLを公開してください！（例：https://github.com/xxxx　等）
-            </small>
-            <%= f.text_field :source_code_url, class: "form-control" %>
-        </div>
-        <div class="form-group">
-            <%= f.label :message, '一言メッセージ' %><br>
-            <small id="message-tip" class="form-text text-muted">
-                一言メッセージを入力してください！（例：質問、アドバイスお願いします！/作品について語り合いましょう！　等）
-            </small>
-            <%= f.text_area :message, class: "form-control" %>
-        </div>
-        <div class="form-group">
-            <%= f.label :development_environment_text, '開発環境' %><br>
-            <small id="development_environment_text-tip" class="form-text text-muted">
-                開発環境を入力してください！(例：Ruby 2.5.7/Rails 5.2.4.4　等)
-            </small>
-            <%= f.text_area :development_environment_text, class: "form-control" %>
-        </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :subtitle, 'サブタイトル（必須）' %><br>
+                <small id="subtitle-tip" class="form-text text-muted">
+                    作品テーマを入力してください！（例：ポートフォリオを紹介するWebサイトです 等）
+                </small>
+                <%= f.text_area :subtitle, class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :post_image, '作品画像（必須）' %><br>
+                <small id="post_image-tip" class="form-text text-muted">
+                    渾身の一枚をアップロードしてください！！
+                </small>
+                <%= f.file_field :post_image %>
+            </div>
+            <div class="form-group">
+                <%= f.label :body, '投稿内容（必須）' %><br>
+                <small id="body-tip" class="form-text text-muted">
+                    作品について自由にアピールしてください！！（例：背景・思い/どのような作品か/苦労したこと　等）
+                </small>
+                <%= f.text_area :body, class: "form-control", rows:20 %>
+            </div>
+            <div class="form-group">
+                <%= f.label :portfolio_url, '作品URL' %><br>
+                <small id="portfolio_url-tip" class="form-text text-muted">
+                    作品のURLを公開してください！ (例：https://xxx.xx...)
+                </small>
+                <%= f.text_field :portfolio_url, class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :source_code_url, 'ソースコードURL GitHubのリポジトリURL 等' %><br>
+                <small id="source_code_url-tip" class="form-text text-muted">
+                    ソースコードが確認できるURLを公開してください！（例：https://github.com/xxxx　等）
+                </small>
+                <%= f.text_field :source_code_url, class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :message, '一言メッセージ' %><br>
+                <small id="message-tip" class="form-text text-muted">
+                    一言メッセージを入力してください！（例：質問、アドバイスお願いします！/作品について語り合いましょう！　等）
+                </small>
+                <%= f.text_area :message, class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :development_environment_text, '開発環境' %><br>
+                <small id="development_environment_text-tip" class="form-text text-muted">
+                    開発環境を入力してください！(例：Ruby 2.5.7/Rails 5.2.4.4　等)
+                </small>
+                <%= f.text_area :development_environment_text, class: "form-control" %>
+            </div>
 
-        <h6>必須項目に漏れや誤字脱字はありませんか？投稿内容に間違いがないか最終確認が済みましたら 投稿ボタンを押しましょう</h6>
-        <%= f.submit '投稿', class: "btn btn-info btn-block" %>
+            <h6>必須項目に漏れや誤字脱字はありませんか？投稿内容に間違いがないか最終確認が済みましたら 投稿ボタンを押しましょう</h6>
+            <%= f.submit '投稿', class: "btn btn-info btn-block" %>
 
-    <% end %>
-  </div>
+        <% end %>
+      </div>
+    </div>
 </div>
