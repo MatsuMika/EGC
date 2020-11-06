@@ -1,7 +1,7 @@
     <div class="form-group">
         <%= f.label :title, '投稿タイトル（必須）' %><br>
         <small id="title-tip" class="form-text text-muted">
-            作品名を入力してください！
+            [改行不可]作品名を入力してください！
         </small>
         <%= f.text_field :title, class: "form-control" %>
 
@@ -9,7 +9,7 @@
     <div class="form-group">
         <%= f.label :subtitle, 'サブタイトル（必須）' %><br>
         <small id="subtitle-tip" class="form-text text-muted">
-            作品テーマを入力してください！（例：ポートフォリオを紹介するWebサイトです）
+            [改行不可]作品テーマを入力してください！（例：ポートフォリオを紹介するWebサイトです）
         </small>
         <%= f.text_area :subtitle, class: "form-control" %>
     </div>

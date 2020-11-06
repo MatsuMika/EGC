@@ -10,4 +10,5 @@ class User < ApplicationRecord
 	has_many :replies, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
+
 end

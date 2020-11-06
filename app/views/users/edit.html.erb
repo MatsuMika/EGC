@@ -1,28 +1,29 @@
-<div class="row">
-  <div class ="col-md text-center">
-    <h4 class="title">アカウント編集</h4>
-</div>
+<div class="container">
+  <div class="row">
+    <div class ="col-md text-center">
+      <h4 class="title">アカウント編集</h4>
   </div>
-<div class="row">
-  <div class ="col-md-6 offset-md-3">
-    <%= form_with model:@user do |f| %>
-      <div class="form-group">
-        <%= f.label :アカウント名 %>
-        <%= f.text_field :nick_name, class:"form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :アカウント画像 %>
-        <%= f.file_field :avatar, class:"form-control-file" %>
-      </div>
+    </div>
+  <div class="row">
+    <div class ="col-md-6 offset-md-3">
+      <%= form_with model:@user do |f| %>
+        <div class="form-group">
+          <%= f.label :アカウント名 %>
+          <%= f.text_field :nick_name, class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :アカウント画像 %>
+          <%= f.file_field :avatar, class:"form-control-file" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :introduction, '自己紹介' %><br>
-        <%= f.text_area :introduction, class:"form-control", rows:"16" %>
-      </div>
-      <div class="actions">
-        <%= f.submit '保存', class: "btn btn-info btn-block" %>
-      </div>
-    <% end %>
+        <div class="form-group">
+          <%= f.label :introduction, '自己紹介' %><br>
+          <%= f.text_area :introduction, class:"form-control", rows:"16" %>
+        </div>
+        <div class="actions">
+          <%= f.submit '保存', class: "btn btn-info btn-block" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-

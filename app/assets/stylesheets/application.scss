@@ -24,45 +24,45 @@
   box-sizing: border-box;
 }
 
+body {
+    background-image: image-url('brandi-redd-aJTiW00qqtI-unsplash.jpg');
+    background-size: cover;
+}
+
 .wrapper{
     min-height: 100vh;
     position: relative;
-    padding-top: 50px;
-    padding-bottom: 150px;
+    padding-bottom: 80px;
     box-sizing: border-box;
-    *background-image: image-url('manhattan-3866140_1920.jpg');
-    *background-size: cover;
-    *background-color:rgba(0,0,0,0.8);
-    *background-size: cover;
-}
-
-body {
-  background-color: #fff;
-  color: #000000;
+    color: #f5f5f5;
 }
 
 .main {
 
 }
 
-.container {
-  height: 100%;
+.container-fluid {
+  padding: 40px;
 }
 
-.heart_red {
+.heart-red {
   color: #e54747;
 }
 
-.heart_white {color: #f5f5f5;
+.heart-white {color: #f5f5f5;
  }
+
+.index-centense {
+ margin-bottom: 60px;
+}
 
 footer {
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color: #000000;
   color: #fff;
   text-align: center;
-  padding: 40px 0;
+  padding: 30px 0;
 
   position: absolute;
   bottom: 0px;
