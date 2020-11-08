@@ -2,26 +2,27 @@
   <% unless reply.id.nil? %>
 
     <div class="row">
-      <div class ="col-md-8 offset-md-4">
+      <div class ="col-md-8 offset-md-3">
         <div class="row">
-          <div class ="col-md text-right">
-            <div class="comment-date"><%= l reply.created_at %>：返信
+          <div class ="col-md">
+            <div class="comment-date">返信：<%= l reply.created_at %>　
+              <%= link_to "#{reply.user.nick_name}", user_path(reply.user.id) %>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class ="col-md-10 text-right">
-            <div><%= simple_format reply.comment %>
-            </div>
-          </div>
           <div class ="col-md-2 text-center">
             <div>
               <%= link_to user_path(reply.user.id) do %>
-                <%= image_tag reply.user.avatar.thumb.url.to_s, :size =>'60x60' %>
+                <%= image_tag reply.user.avatar.thumb.url.to_s, :size =>'60x60', class: "rounded-circle"%>
               <% end %>
-              <br><small><%= link_to "#{reply.user.nick_name}", user_path(reply.user.id) %></small>
             </div>
           </div>
+          <div class ="col-md-10">
+            <div><%= simple_format reply.comment %>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

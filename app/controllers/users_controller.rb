@@ -3,7 +3,11 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-    @post = @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
+    @posts = Post.all
+
+    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
+    @favorite_list = Post.find(favorites)
   end
 
   def edit

@@ -4,52 +4,29 @@
     <div class ="col-md-2">
       <div class="row">
         <div class ="col-md">
-    <%= form_with url: search_search_path, method: :get, local: true do |f| %>
-      <%= f.text_field :title %>
-      <%= f.submit :検索 %>
-    <% end %>
+          <%= form_with url: search_search_path, method: :get, local: true do |f| %>
+            <div>
+              <%= f.text_field :title, class: "form-control", placeholder: "タイトルの検索"%>
+            </div>
+            <div class="actions text-right">
+              <%= f.submit :"検索", class: "btn btn-info btn-sm " %>
+            </div>
+          <% end %>
+        </div>
+       </div>
     </div>
-    </div>
-  </div>
 
     <div class ="col-md-10">
-    <div class="row">
-      <div class ="col-md text-center">
-        <h2>作品一覧</h2>
+      <div class="row">
+        <div class ="col-md-11 text-center">
+          <h1 class="title"><strong>作品一覧</strong></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class ="col-md-11">
+          <%= render "posts/form", posts: @posts %>
+        </div>
       </div>
     </div>
-
-    <div class="row">
-      <% @posts.each do |post| %>
-        <div class="col-sm-4">
-          <div class="card-deck">
-            <div class="index-centense">
-              <div class="card border-dark sm-3" style="width: 20rem;">
-                <%= link_to post_path(post.id) do %>
-                <%= image_tag post.post_image.thumb.url.to_s, class: "card-img-top", width: "100%",  height: "180" %>
-                <% end %>
-                <div class="card-body text-dark">
-                  <strong class="card-title"><%= post.title %></strong>
-                  <p class="card-text"><%= post.subtitle %></p>
-                  <p class="card-text">
-                    <%= link_to user_path(post.user) do %>
-                    <%= image_tag post.user.avatar.thumb.url.to_s, :size =>'35x35' ,class: "rounded-circle"%>
-                    <% end %>
-                    <small><%= post.user.nick_name %></small>
-                  </p>
-                </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <%= link_to "作品を見に行く", post_path(post.id), class: "btn btn-outline-info btn-sm" %><br>
-                      <small class="text-muted">投稿日時：<%= l post.created_at %></small>
-                    </li>
-                  </ul>
-              </div>
-          </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
   </div>
 </div>

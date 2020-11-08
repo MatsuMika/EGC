@@ -24,21 +24,22 @@
   box-sizing: border-box;
 }
 
+.navbar-custom{
+  height: 70px;
+  background-color: #111F4D;
+}
+
 body {
-    background-image: image-url('brandi-redd-aJTiW00qqtI-unsplash.jpg');
-    background-size: cover;
+  background-image: image-url('brandi-redd-aJTiW00qqtI-unsplash.jpg');
+  background-size: cover;
 }
 
 .wrapper{
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 80px;
-    box-sizing: border-box;
-    color: #f5f5f5;
-}
-
-.main {
-
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+  color: #e0e0e0;
 }
 
 .container-fluid {
@@ -49,11 +50,47 @@ body {
   color: #e54747;
 }
 
-.heart-white {color: #f5f5f5;
- }
+.heart-white {
+  color: #e7e7e7;
+}
 
 .index-centense {
- margin-bottom: 60px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.card-deck-height {
+  height: 591px;
+}
+
+.title {
+  color: #57B8D9;
+  padding-top: 2%;
+  padding-bottom: 3%;
+}
+
+.sub-title {
+  color: #57B8D9;
+  padding-top: 2%;
+  padding-bottom: 3%;
+}
+
+.post-main-cover {
+  box-shadow: 0 0 5px #999;
+  background-color:rgba(0,0,0,0.88);
+}
+
+.post-main {
+  margin-bottom: 5%;
+  padding: 5%;
+  box-shadow: 0 0 5px #999;
+  border: 3px solid #e7e7e7;
+}
+
+.post-body {
+  margin: 10px 0px;
+  padding: 8px 2px 2px 8px;
+  border: 1px dashed #5f5f5f;
 }
 
 footer {

@@ -1,24 +1,61 @@
 <div class="container-fluid">
   <div class="row">
     <div class ="col-md text-center">
-        <h3><%= @user.nick_name %> のルーム</h3>
-    </div>
-  </div>
-  <div class="row">
-    <div class ="col-md-3 offset-md-2 text-right">
-       <%= image_tag @user.avatar.thumb.url.to_s, :size =>'200x200' ,class: "rounded-circle" %>
-    </div>
-    <div class="col-md-6">
-      <h5><strong>自己紹介</strong></h5>
-        <p><%= simple_format @user.introduction %></p>
+        <h1 class="title">
+          <strong><%= @user.nick_name %></strong>  のルーム
+        </h1>
     </div>
   </div>
 
+  <div class="row">
+    <div class ="col-md-8 offset-md-2 text-center">
+      <h2 class="sub-title"><strong>自己紹介</strong></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class ="col-md-2 offset-2">
+      <%= image_tag @user.avatar.thumb.url.to_s, :size =>'200x200' ,class: "rounded-circle" %>
+    </div>
+    <div class="col-md-6">
+      <h5><strong><%= @user.nick_name %></strong></h5>
+        <p><%= simple_format @user.introduction %></p>
+    </div>
+  </div>
   <% if @user==current_user %>
     <div class="row">
-      <div class ="col-md-2 offset-md-7 text-center">
-        <%= link_to '編集する', edit_user_path(@user), class: "btn btn-info btn-sm edit_user_#{@user.id}" %>
+      <div class ="col-md-6 offset-md-4 text-right">
+        <%= link_to '編集する', edit_user_path(@user), class: "btn btn-info btn-md edit_user_#{@user.id}" %>
       </div>
     </div>
   <% end %>
+
+  <div class="row">
+    <div class ="col-md-2 text-center">
+        <h2 class="title"><strong>投稿一覧</strong></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class ="col-md-9 offset-md-2">
+      <%= render "posts/form", posts: @user.posts %>
+    </div>
+  </div>
+
+
+ <% if @user==current_user %>
+  <% if @favorite_list.present? %>
+    <div class="row">
+      <div class ="col-md-2 text-center">
+          <h2 class="title">
+            <strong><i class="fas fa-heart fa-sm heart-red"></i> 一覧</strong>
+          </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class ="col-md-9 offset-md-2">
+        <%= render "posts/form", posts: @favorite_list %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 </div>

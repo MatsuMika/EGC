@@ -1,14 +1,23 @@
-<div class="container">
+<div class="container-fluid">
+
   <div class="row">
     <div class ="col-md text-center">
-      <h4 class="title">アカウント編集</h4>
-  </div>
+      <h1 class="title">
+        <strong>アカウント編集</strong>
+      </h1>
     </div>
+  </div>
   <div class="row">
     <div class ="col-md-6 offset-md-3">
-      <%= form_with model:@user do |f| %>
+      <%= form_with(model:@user, local: true) do |f| %>
+
+        <%= render "devise/shared/error_messages", resource: @user %>
+
         <div class="form-group">
-          <%= f.label :アカウント名 %>
+          <%= f.label :ニックネーム %>
+            <small class="form-text text-muted">
+              【 1〜15字以内 】
+            </small>
           <%= f.text_field :nick_name, class:"form-control" %>
         </div>
         <div class="form-group">
@@ -18,6 +27,9 @@
 
         <div class="form-group">
           <%= f.label :introduction, '自己紹介' %><br>
+            <small class="form-text text-muted">
+              【 600字以内 】
+            </small>
           <%= f.text_area :introduction, class:"form-control", rows:"16" %>
         </div>
         <div class="actions">

@@ -17,7 +17,7 @@
 
 .main-visual-centence {
 	color: white;
-	padding: 12% ;
+	padding: 17% ;
 	text-align: center;
 }
 
@@ -29,25 +29,41 @@
 	padding: 20px;
 }
 
-.about-title {
-	color: #57B8D9;
-	padding-top: 8%;
-	padding-bottom: 4%;
-}
-.about-centence {
-	padding: 5%;
+.about-cover {
+	background-color:rgba(0,0,0,0.9);
 }
 
+.about-main-title {
+	color: #57B8D9;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	text-align: center;
+}
+
+.about-title {
+	color: #57B8D9;
+	padding-top: 15%;
+	text-align: center;
+}
+
+.about-title-body {
+	padding-bottom: 5%;
+	text-align: center;
+}
 
 .about-subtitle {
 	color: #57B8D9;
 	padding-bottom: 2%;
 }
 
-.about-cover {
+.about-centence {
+	padding: 5%;
+	margin: 2%;
 	text-align: center;
 }
 
 .about-body {
-	padding-bottom: 2%;
+	text-align: center;
 }
+
+

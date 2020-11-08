@@ -3,17 +3,18 @@ class Post < ApplicationRecord
 	has_many :post_comments
 	has_many :favorites, dependent: :destroy
 
-	def favorited_by?(user)
-    favorites.where(user_id: user.id).exists?
-  end
-
 	mount_uploader :post_image, PostImageUploader
 
+	validates :title, presence: true, length: { maximum: 50, minimum: 1 }
+  	validates :subtitle, presence: true, length: { maximum: 80, minimum: 5 }
+  	validates :post_image, presence: true
+  	validates :body, presence: true, length: { minimum: 20 }
+	validates :portfolio_url, length: { maximum: 200 }
+  	validates :source_code_url, length: { maximum: 200 }
+  	validates :message, length: { maximum: 200 }
+  	validates :development_environment_text, length: { maximum: 800 }
 
-	validates :title, presence: true
-  validates :subtitle, presence: true
-  validates :body, presence: true
-  validates :post_image, presence: true
-
-
+  	def favorited_by?(user)
+    	favorites.where(user_id: user.id).exists?
+  	end
 end

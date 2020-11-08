@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!
+  before_action :move_to_signed_in, except: [:index]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
 	def new
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: "You have created book successfully."
     else
-      render :index
+      render :new
     end
 	end
 
@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts = Post.all
   	@post = Post.find(params[:id])
   	@post_comment = PostComment.new
     @post_comments = @post.post_comments
@@ -52,6 +53,12 @@ private
     @post = Post.find(params[:id])
     unless @post.user == current_user
       redirect_to posts_path
+    end
+  end
+
+  def move_to_signed_in
+    unless  user_signed_in?
+      redirect_to new_user_session_path
     end
   end
 
