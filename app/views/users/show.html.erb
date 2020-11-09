@@ -6,9 +6,6 @@
     <h1 class="title"><%= @user.nick_name %>
     </h1>
   </div>
-
-
-
   <div class="row">
     <div class="col-md-6 offset-4">
       <div class="cover">
@@ -20,7 +17,6 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class ="col-md-2 text-center">
         <h2 class="title"><strong>投稿一覧</strong></h2>
@@ -31,7 +27,6 @@
       <%= render "posts/form", posts: @user.posts %>
     </div>
   </div>
-
   <% if @user==current_user %>
     <% if @favorite_list.present? %>
       <div class="row">
