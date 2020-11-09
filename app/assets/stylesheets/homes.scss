@@ -29,10 +29,6 @@
 	padding: 20px;
 }
 
-.about-cover {
-	background-color:rgba(0,0,0,0.9);
-}
-
 .about-main-title {
 	color: #57B8D9;
 	padding-top: 4%;
@@ -42,7 +38,8 @@
 
 .about-title {
 	color: #57B8D9;
-	padding-top: 15%;
+	margin-top: 15%;
+	margin-bottom: 5%;
 	text-align: center;
 }
 
@@ -54,11 +51,12 @@
 .about-subtitle {
 	color: #57B8D9;
 	padding-bottom: 2%;
+	text-align: center;
 }
 
 .about-centence {
-	padding: 5%;
-	margin: 2%;
+	padding: 2%;
+	margin: 3%;
 	text-align: center;
 }
 

@@ -11,7 +11,8 @@ class User < ApplicationRecord
 
   	mount_uploader :avatar, AvatarUploader
 
- 	validates :nick_name, length: { maximum: 15, minimum: 1 }, uniqueness: true
+	validates :name, length: { in: 2..20 }
+ 	validates :nick_name, length: { in: 1..15 }, presence: true
  	validates :introduction, length: { maximum: 600 }
 
 end

@@ -5,11 +5,11 @@ class Post < ApplicationRecord
 
 	mount_uploader :post_image, PostImageUploader
 
-	validates :title, presence: true, length: { maximum: 50, minimum: 1 }
-  	validates :subtitle, presence: true, length: { maximum: 80, minimum: 5 }
+    validates :title, presence: true, length: { in: 1..50 }
+  	validates :subtitle, presence: true, length: { in: 5..80 }
   	validates :post_image, presence: true
   	validates :body, presence: true, length: { minimum: 20 }
-	validates :portfolio_url, length: { maximum: 200 }
+    validates :portfolio_url, length: { maximum: 200 }
   	validates :source_code_url, length: { maximum: 200 }
   	validates :message, length: { maximum: 200 }
   	validates :development_environment_text, length: { maximum: 800 }

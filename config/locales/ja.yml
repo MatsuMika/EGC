@@ -2,34 +2,47 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
-
   errors:
+    format: "%{attribute}%{message}"
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      already_confirmed: " は既に登録済みです"
+      confirmation_period_expired: "％{period}以内に確認する必要があります。新しいものをリクエストしてください"
+      expired: " の有効期限が切れています。新しいものをリクエストしてください"
+      not_found: " は見つかりません"
+      not_locked: " がロックされました"
+      blank: " が入力されていません"
+      too_long: " は%{count}文字以内で入力してください"
+      too_short: " は%{count}文字以上で入力してください"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
-
+        one: "エラーがあります："
+        other: "%{count} 個のエラーがあります："
   activerecord:
-    errors:
-      models:
-        post:
-          attributes:
-            subtitle:
-              blank: "が入力されていません。"
-
     attributes:
       user:
         current_password: "現在のパスワード"
-        name: 名前
+        name: 氏名
+        nick_name: "ニックネーム"
         email: "メールアドレス"
         password: "パスワード"
-        password_confirmation: "確認用パスワード"
+        encrypted_password: "確認用パスワード"
+        reset_password_token: "パスワードリセット"
         remember_me: "次回から自動的にログイン"
+        introduction: "自己紹介"
+        avatar: "アカウント画像"
       post:
-        subtitle: "サブタイトル（必須)"
-        body: "投稿内容（必須）"
+        title: "サイト名"
+        subtitle: "サブタイトル"
+        post_image: "作品画像"
+        body: "投稿内容"
+        portfolio_url: "作品URL"
+        source_code_url: "ソースコードURL"
+        message: "ひとこと"
+        development_environment_text: "開発環境"
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+      destroy: 削除

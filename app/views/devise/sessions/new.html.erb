@@ -2,7 +2,7 @@
 
   <div class = "row">
     <div class ="col-md-6 offset-md-3 text-center">
-      <h4>ログイン</h4>
+      <h2>ログイン</h2>
     </div>
   </div>
 
@@ -11,7 +11,7 @@
         <div class="field">
           <div class = "row">
             <div class ="col-md-1 offset-md-3 text-right">
-              <h5 class="fas fa-envelope"></h5>
+              <i class="fas fa-envelope fa-2x"></i>
             </div>
             <div class ="col-md-5">
               <%= f.email_field :email, class: "form-control", autofocus: true, placeholder:"Eメール", autocomplete: "email" %>
@@ -22,7 +22,7 @@
         <div class="field">
           <div class = "row">
             <div class ="col-md-1 offset-md-3 text-right">
-              <h5 class="fas fa-lock"></h5>
+              <i class="fas fa-lock fa-2x"></i>
             </div>
             <div class ="col-md-5">
                 <%= f.password_field :password, class: "form-control", placeholder:"パスワード", autocomplete: "current-password" %>
@@ -44,7 +44,7 @@
         <div class = "row">
           <div class ="col-md-5 offset-md-4 ">
             <div class="actions">
-              <%= f.submit "ログイン", class: "btn btn-primary btn-block" %>
+              <%= f.submit "ログイン", class: "btn btn-info btn-block" %>
             </div>
           </div>
         </div>

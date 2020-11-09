@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 	before_action :ensure_correct_user, only: [:edit, :update]
 
   def show
   	@user = User.find(params[:id])
-    @post = Post.find(params[:id])
-    @posts = Post.all
 
     favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
     @favorite_list = Post.find(favorites)
@@ -17,7 +16,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
     	@user = User.find(params[:id])
-      redirect_to user_path(@user), notice: "successfully updated user!"
+      redirect_to user_path(@user), notice: "正常に更新されました"
     else
       render "edit"
     end

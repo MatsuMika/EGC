@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to posts_path, notice: "You have created book successfully."
+      redirect_to posts_path, notice: "投稿に成功しました"
     else
       render :new
     end
@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def index
   	@posts = Post.all
+    @posts = Post.order("id DESC")
   end
 
   def show
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: "You have updated book successfully."
+      redirect_to post_path(@post), notice: "正常に更新されました"
     else
       render "edit"
     end
@@ -43,23 +44,25 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-private
+  private
 
-  def post_params
-    params.require(:post).permit(:title, :subtitle, :post_image, :body, :portfolio_url, :source_code_url, :body, :message, :development_environment_text)
-  end
-
-  def ensure_correct_user
-    @post = Post.find(params[:id])
-    unless @post.user == current_user
-      redirect_to posts_path
+    def post_params
+      params.require(:post).permit(:title, :subtitle, :post_image, :body, :portfolio_url, :source_code_url, :body, :message, :development_environment_text)
     end
-  end
 
-  def move_to_signed_in
-    unless  user_signed_in?
-      redirect_to new_user_session_path
+
+    def move_to_signed_in
+      unless  user_signed_in?
+        redirect_to new_user_session_path
+      end
     end
-  end
+
+    def ensure_correct_user
+      @post = Post.find(params[:id])
+      unless @post.user == current_user
+        redirect_to posts_path
+      end
+    end
 
 end
+

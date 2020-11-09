@@ -23,8 +23,9 @@
                       <% end %>
                     <% end %>
                   <% else %>
+                    <%= link_to new_user_session_path do %>
                     <i class="fas fa-heart heart-white"></i>
-                    <small>(いいねにはログインが必要です)</small>
+                    <% end %>
                   <% end %>
                     <%= post.favorites.count %>
                     <i class="fas fa-comment-dots"></i>

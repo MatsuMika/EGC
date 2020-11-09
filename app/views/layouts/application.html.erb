@@ -24,7 +24,7 @@
               <% if user_signed_in? %>
 
                 <li class="nav-item">
-                  <%= link_to 'トップ', root_path, class: "nav-link" %>
+                  <%= link_to 'ホーム', root_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
                   <%= link_to 'E.G.C.とは？', homes_about_path, class: "nav-link" %>
@@ -46,10 +46,10 @@
 
               <% else %>
                 <li class="nav-item">
-                  <%= link_to 'トップ', root_path, class: "nav-link" %>
+                  <%= link_to 'ホーム', root_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to 'E.G.C.？', homes_about_path, class: "nav-link" %>
+                  <%= link_to 'E.G.C.とは？', homes_about_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
                   <%= link_to '作品一覧', posts_path, class: "nav-link" %>
@@ -65,9 +65,7 @@
                   ログインしていません
                   </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <%= link_to '新規登録(無料)', new_user_registration_path, class: "nav-link" %>
-                      <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
-
+                      <%= link_to 'マイページ', new_user_session_path, class: "dropdown-item" %>
                     </div>
                 </li>
 
@@ -77,13 +75,11 @@
           </div>
         </nav>
       </header>
-
-      <div class="main">
+      <main>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
-      </div>
-
+      </main>
       <footer>
         <div>
             Copyright © EGC Inc. All Rights Reserved.
