@@ -5,6 +5,8 @@ ja:
   errors:
     format: "%{attribute}%{message}"
     messages:
+      Password confirmationtranslation missing: "パスワードが一致しません"
+      confirmation: と%{attribute}の入力が一致しません
       already_confirmed: " は既に登録済みです"
       confirmation_period_expired: "％{period}以内に確認する必要があります。新しいものをリクエストしてください"
       expired: " の有効期限が切れています。新しいものをリクエストしてください"
