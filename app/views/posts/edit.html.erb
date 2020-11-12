@@ -5,77 +5,8 @@
     </div>
   </div>
   <div class="row">
-    <div class ="col-md-10 offset-md-1">
-      <%= form_with(model:@post, local: true) do |f| %>
-
-      <%= render "devise/shared/error_messages", resource: @post %>
-
-        <div class="form-group">
-          <%= f.label :title, '投稿タイトル（必須）' %><br>
-            <small id="title-tip" class="form-text text-muted">
-                作品名を入力してください！<br>
-                【 改行不可：1〜50文字以内 】
-            </small>
-            <%= f.text_field :title, class: "form-control" %>
-
-        </div>
-        <div class="form-group">
-            <%= f.label :subtitle, 'サブタイトル（必須）' %><br>
-            <small id="subtitle-tip" class="form-text text-muted">
-              作品テーマを入力してください！（例：ポートフォリオを紹介するWebサイトです）<br>
-              【 改行不可：5〜80文字以内 】
-            </small>
-            <%= f.text_area :subtitle, class: "form-control" %>
-        </div>
-        <div class="form-group">
-            <%= f.label :post_image, '作品画像（必須）' %><br>
-            <small id="post_image-tip" class="form-text text-muted">
-                渾身の一枚をアップロードしてください！！
-            </small>
-            <%= f.file_field :post_image %>
-        </div>
-        <div class="form-group">
-            <%= f.label :body, '投稿内容（必須）' %><br>
-            <small id="body-tip" class="form-text text-muted">
-                作品について自由にアピールしてください！！（例：背景・思い/どのような作品か/苦労したこと　等）<br>
-                【 20文字以上 】
-            </small>
-            <%= f.text_area :body, class: "form-control", rows:20 %>
-        </div>
-        <div class="form-group">
-            <%= f.label :portfolio_url, '作品URL' %><br>
-            <small id="portfolio_url-tip" class="form-text text-muted">
-                作品のURLを公開してください！ (例：https://xxx.xx...)
-            </small>
-            <%= f.text_field :portfolio_url, class: "form-control" %>
-        </div>
-        <div class="form-group">
-            <%= f.label :source_code_url, 'ソースコードURL GitHubのリポジトリURL 等' %><br>
-            <small id="source_code_url-tip" class="form-text text-muted">
-                ソースコードが確認できるURLを公開してください！（例：https://github.com/xxxx　等）
-            </small>
-            <%= f.text_field :source_code_url, class: "form-control" %>
-        </div>
-        <div class="form-group">
-            <%= f.label :message, '一言メッセージ' %><br>
-            <small id="message-tip" class="form-text text-muted">
-                一言メッセージを入力してください！（例：質問、アドバイスお願いします！/作品について語り合いましょう！　等）<br>
-                【 200文字以内 】
-            </small>
-            <%= f.text_area :message, class: "form-control", rows:5 %>
-        </div>
-        <div class="form-group">
-            <%= f.label :development_environment_text, '開発環境' %><br>
-            <small id="development_environment_text-tip" class="form-text text-muted">
-                開発環境を入力してください！(例：Ruby 2.5.7/Rails 5.2.4.4　等)<br>
-                【 800文字以内 】
-            </small>
-            <%= f.text_area :development_environment_text, class: "form-control", rows:5 %>
-        </div>
-        <h6>必須項目の未記入や誤字脱字はありませんか？最終確認後に編集完了ボタンを押しましょう</h6>
-          <%= f.submit '編集完了', class: 'btn btn-info btn-block' %>
-
-      <% end %>
+    <div class ="col-md-8 offset-md-2">
+      <%= render "posts/form", post: @post %>
     </div>
   </div>
 </div>

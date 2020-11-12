@@ -23,7 +23,7 @@ ja:
       user:
         current_password: "現在のパスワード"
         name: 氏名
-        nick_name: "ニックネーム"
+        nick_name: "ニックネーム(表示名)"
         email: "メールアドレス"
         password: "パスワード"
         encrypted_password: "確認用パスワード"
@@ -35,7 +35,7 @@ ja:
         title: "サイト名"
         subtitle: "サブタイトル"
         post_image: "作品画像"
-        body: "投稿内容"
+        body: "ポートフォリオ紹介"
         portfolio_url: "作品URL"
         source_code_url: "ソースコードURL"
         message: "ひとこと"
@@ -44,7 +44,7 @@ ja:
     select:
       prompt: 選択してください
     submit:
-      create: 登録
+      create: 投稿
       submit: 保存
       update: 更新
       destroy: 削除

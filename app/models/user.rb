@@ -13,6 +13,6 @@ class User < ApplicationRecord
 
 	validates :name, length: { in: 2..20 }
  	validates :nick_name, length: { in: 1..15 }, presence: true
- 	validates :introduction, length: { maximum: 600 }
+ 	validates :introduction, length: { maximum: 1000 }
 
 end

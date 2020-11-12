@@ -35,18 +35,16 @@
     </div>
 
     <% if user_signed_in? %>
-      <div class="row">
-        <div class ="col-md-8 offset-md-4">
-          <%= form_with(model: [comment.post, comment, comment.replies.build] ) do |f| %>
-            <div>
-              <%= f.text_area :comment, class: "form-control", placeholder: "返信をここに" %>
-            </div>
+      <%= form_with(model: [comment.post, comment, comment.replies.build] ) do |f| %>
+        <div class="row">
+          <div class ="col-md-8 offset-md-4">
+            <%= f.text_area :comment, class: "form-control", placeholder: "返信をここに" %>
             <div class="actions text-right">
               <%= f.submit "送信", class: "btn btn-info md-10" %>
             </div>
-          <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
 
   <% end %>

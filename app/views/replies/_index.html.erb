@@ -27,14 +27,16 @@
       </div>
     </div>
 
-    <% if reply.user == current_user %>
+
       <div class="row">
         <div class ="col-md text-right">
+              <% if reply.user == current_user %>
           <p><%= link_to '削除', post_post_comment_reply_path(comment.post_id, comment.id, reply.id), method: :delete, remote: true, class: "btn btn-outline-danger btn-sm" %>
           </p>
+              <% end %>
         </div>
       </div>
-    <% end %>
+
 
   <% end %>
 <% end %>

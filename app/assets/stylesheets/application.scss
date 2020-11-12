@@ -24,9 +24,15 @@
   box-sizing: border-box;
 }
 
-.navbar-custom{
+.navbar-custom {
   height: 70px;
-  background-color: #111F4D;
+  background: linear-gradient(45deg, #000000, #000031, #17a2b8, #ffd900);
+}
+
+.navbar-brand{
+  font-size: 40px;
+  font-family: 'Kalam', cursive;
+  color: #fff;
 }
 
 body {
@@ -34,13 +40,13 @@ body {
   background-size: cover;
 }
 
-.wrapper{
+.wrapper {
   min-height: 100vh;
   position: relative;
   padding-bottom: 80px;
   box-sizing: border-box;
-  color: #e0e0e0;
-    background-color:rgba(0,0,0,0.8);
+  color: #FFFFFB;
+  background-color:rgba(0,0,0,0.9);
 }
 
 .container-fluid {
@@ -65,13 +71,13 @@ body {
 }
 
 .title {
-  color: #57B8D9;
+  color: #fff;
   padding-top: 3%;
   padding-bottom: 3%;
 }
 
 .sub-title {
-  color: #57B8D9;
+  color: #ffd900;
   padding-top: 2%;
   padding-bottom: 3%;
 }
@@ -86,7 +92,6 @@ body {
 
 .post-main-cover {
   box-shadow: 0 0 5px #999;
-  background-color:rgba(0,0,0,0.88);
 }
 
 .post-main {

@@ -7,9 +7,9 @@
     </h1>
   </div>
   <div class="row">
-    <div class="col-md-6 offset-4">
+    <div class="col-md-6 offset-3">
       <div class="cover">
-        <h3><strong>自己紹介</strong></h3>
+        <h4><strong>自己紹介</strong></h4>
           <p><%= simple_format @user.introduction %></p>
         <% if @user==current_user %>
           <br><%= link_to '編集する', edit_user_path(@user), class: "btn btn-info btn-md edit_user_#{@user.id}" %>
@@ -24,7 +24,7 @@
   </div>
   <div class="row">
     <div class ="col-md-9 offset-md-2">
-      <%= render "posts/form", posts: @user.posts %>
+      <%= render "posts/index_form", posts: @user.posts %>
     </div>
   </div>
   <% if @user==current_user %>
@@ -38,7 +38,7 @@
       </div>
       <div class="row">
         <div class ="col-md-9 offset-md-2">
-          <%= render "posts/form", posts: @favorite_list %>
+          <%= render "posts/index_form", posts: @favorite_list %>
         </div>
       </div>
     <% end %>

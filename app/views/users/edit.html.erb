@@ -14,26 +14,40 @@
         <%= render "devise/shared/error_messages", resource: @user %>
 
         <div class="form-group">
-          <%= f.label :ニックネーム %>
+          <%= f.label :name %>
+            <small class="form-text text-muted">
+              【 2文字以上 】
+            </small>
+          <%= f.text_field :name, class: "form-control", autofocus: true, placeholder:"氏名", autocomplete: "name" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email %>
+            <small class="form-text text-muted">
+              【 1〜15文字以内 】
+            </small>
+          <%= f.email_field :email, class: "form-control", placeholder:"Eメール", autocomplete: "email" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :nick_name %>
             <small class="form-text text-muted">
               【 1〜15文字以内 】
             </small>
           <%= f.text_field :nick_name, class:"form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :アカウント画像 %>
+          <%= f.label :avatar %>
           <%= f.file_field :avatar, class:"form-control-file" %>
         </div>
 
         <div class="form-group">
-          <%= f.label :introduction, '自己紹介' %><br>
-            <small class="form-text text-muted">
-              【 600文字以内 】
+          <%= f.label :introduction %>
+            <small class="form-text">
+              【 1000文字以内 】
             </small>
           <%= f.text_area :introduction, class:"form-control", rows:"16" %>
         </div>
-        <div class="actions">
-          <%= f.submit '保存', class: "btn btn-info btn-block" %>
+        <div class="actions text-right">
+          <%= f.submit class: "btn btn-info btn-block" %>
         </div>
       <% end %>
     </div>

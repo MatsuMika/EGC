@@ -2,16 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.posts-card {
-	margin: auto;
-	margin-bottom: 20px;
-	box-shadow: 0 0 5px #999;
-	text-color :white
+
+.post_comments_area{
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
-.post {
-	margin: 8%;
-	border: 3px;
-	padding: auto;
-	background-color: #DBE2EF;
+.reply_area {
+	margin: 15px 0px 15px ;
 }
+

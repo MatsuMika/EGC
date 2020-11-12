@@ -1,0 +1,53 @@
+<% posts.each_slice(3) do |three_posts| %>
+
+  <div class="row">
+    <% three_posts.each do |post| %>
+      <div class="col-sm-4">
+        <div class="card-deck card-deck-height">
+          <div class="index-centense">
+            <div class="card border-dark h-100" style="width: 20rem;">
+              <%= link_to post_path(post.id) do %>
+              <%= image_tag post.post_image.thumb.url.to_s, class: "card-img-top", width: "100%",  height: "180" %>
+              <% end %>
+              <div class="card-body text-dark">
+                <h6><strong class="card-title"><%= post.title %></strong></h6>
+                <div class="card-text"><%= post.subtitle %><br>
+                  <% if user_signed_in? %>
+                    <% if post.favorited_by?(current_user) %>
+                      <%= link_to post_favorites_path(post), method: :delete do %>
+                        <i class="fas fa-heart heart-red"></i>
+                      <% end %>
+                    <% else %>
+                      <%= link_to post_favorites_path(post), method: :post do %>
+                        <i class="fas fa-heart heart-white"></i>
+                      <% end %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to new_user_session_path do %>
+                    <i class="fas fa-heart heart-white"></i>
+                    <% end %>
+                  <% end %>
+                    <%= post.favorites.count %>
+                    <i class="fas fa-comment-dots"></i>
+                      <%= post.post_comments.count %>
+                </div>
+                <div class="card-text">
+                    <%= link_to user_path(post.user) do %>
+                      <%= image_tag post.user.avatar.thumb.url.to_s, :size =>'35x35' ,class: "rounded-circle"%>
+                    <% end %>
+                    <small><%= post.user.nick_name %></small>
+                </div>
+              </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <%= link_to "作品を見に行く", post_path(post.id), class: "btn btn-outline-info btn-sm" %><br>
+                    <small class="text-muted">投稿日時：<%= l post.created_at %></small>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -22,7 +22,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.all
   	@post = Post.find(params[:id])
   	@post_comment = PostComment.new
     @post_comments = @post.post_comments
@@ -49,7 +48,6 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :subtitle, :post_image, :body, :portfolio_url, :source_code_url, :body, :message, :development_environment_text)
     end
-
 
     def move_to_signed_in
       unless  user_signed_in?
