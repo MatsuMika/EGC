@@ -60,7 +60,7 @@
 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  ログインしていません
+                  ログインしてください
                   </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <%= link_to 'マイページ', new_user_session_path, class: "dropdown-item" %>
@@ -77,8 +77,9 @@
         <%= yield %>
       </main>
       <footer>
-        <div>
-            Copyright © EGC Inc. All Rights Reserved.
+        <div class="footer-contence">お問い合わせ先：xxxxxx＠xxxx.com</div>
+        <div class="copyright">
+            Copyright © E.G.C. Inc. All Rights Reserved.
         </div>
       </footer>
     </div>

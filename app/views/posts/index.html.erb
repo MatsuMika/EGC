@@ -6,7 +6,8 @@
         <div class ="col-md">
           <%= form_with url: search_search_path, method: :get, local: true do |f| %>
             <div>
-              <%= f.text_field :title, class: "form-control", placeholder: "タイトルの検索"%>
+              <%= f.select :type, {'投稿者名': 'user', 'portfolio(作品名/サブタイトル/開発環境)': 'post'}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+              <%= f.text_field :keyword, class: "form-control", placeholder: "検索"%>
             </div>
             <div class="actions text-right">
               <%= f.submit :"検索", class: "btn btn-info btn-sm " %>
@@ -19,7 +20,12 @@
     <div class ="col-md-10">
       <div class="row">
         <div class ="col-md-11 text-center">
-          <h1 class="title">作品一覧</h1>
+          <h2 class="title">作品一覧</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class ="col-md-11">
+          <h3><%= @posts.count %> 件</h3>
         </div>
       </div>
       <div class="row">

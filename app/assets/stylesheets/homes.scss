@@ -16,7 +16,7 @@
 }
 
 .main-visual-centence {
-	color: white;
+	color: #fff;
 	padding: 17% ;
 	text-align: center;
 }
@@ -30,14 +30,13 @@
 }
 
 .about-main-title {
-	color: #ffd900;
 	padding-top: 4%;
 	padding-bottom: 4%;
 	text-align: center;
 }
 
 .about-title {
-	color: #ffd900;
+	color: #1ed7f5;
 	margin-top: 15%;
 	margin-bottom: 5%;
 	text-align: center;
@@ -48,8 +47,19 @@
 	text-align: center;
 }
 
-.about-subtitle {
+.about-origin-title {
+	padding-bottom: 2%;
+	text-align: center;
+}
+
+.about-origin {
 	color: #ffd900;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+.about-subtitle {
+	color: #1ed7f5;
 	padding-bottom: 2%;
 	text-align: center;
 }

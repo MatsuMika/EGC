@@ -33,7 +33,6 @@
     <div class="reply_area_<%= comment.id %>">
       <%= render partial: 'replies/index', locals: { comment: comment} %>
     </div>
-
     <% if user_signed_in? %>
       <%= form_with(model: [comment.post, comment, comment.replies.build] ) do |f| %>
         <div class="row">

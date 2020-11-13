@@ -25,12 +25,12 @@
 }
 
 .navbar-custom {
-  height: 70px;
+  height: 65px;
   background: linear-gradient(45deg, #000000, #000031, #17a2b8, #ffd900);
 }
 
 .navbar-brand{
-  font-size: 40px;
+  font-size: 35px;
   font-family: 'Kalam', cursive;
   color: #fff;
 }
@@ -61,13 +61,17 @@ body {
   color: #e7e7e7;
 }
 
+.asterisk-red {
+  color: #e54747;
+}
+
 .index-centense {
   margin-top: 15px;
   margin-bottom: 20px;
 }
 
 .card-deck-height {
-  height: 591px;
+  height: 580px;
 }
 
 .title {
@@ -90,15 +94,16 @@ body {
   box-shadow: 0 0 5px #999;
 }
 
-.post-main-cover {
+.post-main {
+  margin-bottom: 10px;
+  padding: 30px;
   box-shadow: 0 0 5px #999;
 }
 
-.post-main {
-  margin-bottom: 5%;
-  padding: 5%;
+.post-comment {
+  padding: 15px;
   box-shadow: 0 0 5px #999;
-  border: 3px solid #e7e7e7;
+  border: 1px solid #e7e7e7;
 }
 
 .post-body {
@@ -116,10 +121,16 @@ footer {
   height: 80px;
   background-color: #000000;
   color: #fff;
-  text-align: center;
-  padding: 30px 0;
-
   position: absolute;
   bottom: 0px;
+}
+
+.footer-contence {
+  font-size: 13px;
+  text-align: left;
+  padding: 10px 0 0 10px;
+}
+.copyright {
+  text-align: center;
 }
 
