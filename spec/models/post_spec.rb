@@ -11,6 +11,10 @@ RSpec.describe 'Postモデルのテスト', type: :model do
         expect(post.valid?).to eq false;
       end
       it '50文字以下であること' do
+        post.title = Faker::Lorem.characters(number:50)
+        expect(post.valid?).to eq true;
+      end
+      it '50文字以下であること' do
         post.title = Faker::Lorem.characters(number:51)
         expect(post.valid?).to eq false;
       end
@@ -19,6 +23,10 @@ RSpec.describe 'Postモデルのテスト', type: :model do
       it '空欄でないこと' do
         post.subtitle = ''
         expect(post.valid?).to eq false;
+      end
+      it '80文字以下であること' do
+        post.subtitle = Faker::Lorem.characters(number:80)
+        expect(post.valid?).to eq true;
       end
       it '80文字以下であること' do
         post.subtitle = Faker::Lorem.characters(number:81)
@@ -37,14 +45,18 @@ RSpec.describe 'Postモデルのテスト', type: :model do
         expect(post.valid?).to eq false;
       end
       it '20文字以上であること' do
+        post.body = Faker::Lorem.characters(number:20)
+        expect(post.valid?).to eq true;
+      end
+      it '20文字以上であること' do
         post.body = Faker::Lorem.characters(number:19)
         expect(post.valid?).to eq false;
       end
     end
     context 'portfolio_urlカラム' do
       it '200文字以下であること' do
-        post.portfolio_url = Faker::Lorem.characters(number:201)
-        expect(post.valid?).to eq false;
+        post.portfolio_url = Faker::Lorem.characters(number:200)
+        expect(post.valid?).to eq true;
       end
     end
     context 'source_code_urlカラム' do
@@ -55,11 +67,18 @@ RSpec.describe 'Postモデルのテスト', type: :model do
     end
     context 'messageカラム' do
     it '200文字以下であること' do
+      post.message = Faker::Lorem.characters(number:200)
+      expect(post.valid?).to eq true;
+    it '200文字以下であること' do
       post.message = Faker::Lorem.characters(number:201)
       expect(post.valid?).to eq false;
     end
   end
     context 'development_environment_textカラム' do
+    it '200文字以下であること' do
+      post.development_environment_text = Faker::Lorem.characters(number:200)
+      expect(post.valid?).to eq true;
+    end
     it '200文字以下であること' do
       post.development_environment_text = Faker::Lorem.characters(number:201)
       expect(post.valid?).to eq false;
