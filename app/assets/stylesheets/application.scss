@@ -116,6 +116,22 @@ body {
   color: red;
 }
 
+.pagination {
+  justify-content: center;
+}
+.pagination>li>a {
+  border: none;
+  color: #696969 !important;
+}
+
+.pagination>.active>a {
+  background-color: #81c8cc !important;
+}
+
+.pagination>li>a:hover {
+background-color: #81c8cc !important;
+}
+
 footer {
   width: 100%;
   height: 80px;

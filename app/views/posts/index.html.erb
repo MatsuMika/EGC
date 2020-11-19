@@ -25,12 +25,13 @@
       </div>
       <div class="row">
         <div class ="col-md-11">
-          <h3><%= @posts.count %> 件</h3>
+          <h5><%= page_entries_info(@posts) %></h5>
         </div>
       </div>
       <div class="row">
         <div class ="col-md-11">
           <%= render "posts/index_form", posts: @posts %>
+          <%= paginate @posts %>
         </div>
       </div>
     </div>

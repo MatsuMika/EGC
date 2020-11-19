@@ -72,6 +72,7 @@ gem 'activeadmin'
 gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'kaminari','~> 1.2.1'
 
 gem 'dotenv-rails'
   group :production do

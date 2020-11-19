@@ -17,8 +17,7 @@ class PostsController < ApplicationController
 	end
 
   def index
-  	@posts = Post.all
-    @posts = Post.order("id DESC")
+  	@posts = Post.page(params[:page]).per(6)
   end
 
   def show
@@ -46,7 +45,8 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :subtitle, :post_image, :body, :portfolio_url, :source_code_url, :body, :message, :development_environment_text)
+      params.require(:post).permit(:title, :subtitle, :post_image, :body, 
+        :portfolio_url, :source_code_url, :body, :message, :development_environment_text)
     end
 
     def move_to_signed_in
