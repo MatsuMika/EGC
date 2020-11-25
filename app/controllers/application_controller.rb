@@ -5,7 +5,12 @@ class ApplicationController < ActionController::Base
 
 	# ログイン後のリダイレクト先
   def after_sign_in_path_for(resource)
-    user_path(resource.id)
+    case resource
+    when User
+      user_path(resource.id)
+    when AdminUser
+      admin_root_path
+    end
   end
 
 	# ログアウト後のリダイレクト先

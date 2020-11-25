@@ -26,7 +26,7 @@ ja:
         nick_name: "ニックネーム(表示名)"
         email: "メールアドレス"
         password: "パスワード"
-        encrypted_password: "確認用パスワード"
+        password_confirmation: "確認用パスワード"
         reset_password_token: "パスワードリセット"
         remember_me: "次回から自動的にログイン"
         introduction: "自己紹介"
