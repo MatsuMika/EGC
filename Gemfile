@@ -75,6 +75,7 @@ gem 'mini_magick'
 gem 'kaminari','~> 1.2.1'
 
 gem 'dotenv-rails'
-  group :production do
+group :production do
+  gem 'fog'
   gem 'mysql2'
 end
