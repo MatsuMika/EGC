@@ -76,6 +76,6 @@ gem 'kaminari','~> 1.2.1'
 
 gem 'dotenv-rails'
 group :production do
-  gem 'fog'
+  gem 'fog-aws'
   gem 'mysql2'
 end
