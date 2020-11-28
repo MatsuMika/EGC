@@ -2,6 +2,7 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
+      long: "%Y/%m/%d %H:%M"
   errors:
     format: "%{attribute}%{message}"
     messages:
