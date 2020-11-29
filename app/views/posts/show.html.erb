@@ -38,17 +38,9 @@
           </div>
           <div class="col-md-2 content">
             <h5>
-              <% if @post.favorited_by?(current_user) %>
-                <%= link_to post_favorites_path(@post), method: :delete do %>
-                  <strong><i class="fas fa-heart fa-lg heart-red"></i>
-                  </strong>
-                <% end %>
-              <% else %>
-                <%= link_to post_favorites_path(@post), method: :post do %>
-                  <i class="fas fa-heart fa-lg heart-white"></i>
-                <% end %>
-              <% end %>
-              <%= @post.favorites.count %>
+              <div id="favorites_buttons_<%= @post.id %>">
+                 <%= render partial: 'favorites/favorite', locals: { post: @post} %>
+              </div>
             </h5>
           </div>
           <div class="col-md-3 content">
