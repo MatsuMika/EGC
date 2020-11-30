@@ -75,6 +75,13 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
+
+        <span id="back">
+          <%= link_to "#" do %>
+            <i class="fas fa-chevron-circle-up fa-2x" alt="トップに移動する"></i>
+          <% end %>
+        </span>
+
       </main>
       <footer>
         <div class="footer-contence">お問い合わせ先：xxxxxx＠xxxx.com</div>

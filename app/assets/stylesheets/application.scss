@@ -77,12 +77,22 @@ body {
 
 .card-deck-height {
   height: 580px;
+  margin: 0 -12px -12px 0;
+}
+
+.sub-text-wrapper {
+  display: flex;
+  line-height: 16px;
+}
+
+.card-text {
+  margin-top: 5px;
 }
 
 .title {
   color: #fff;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
 
 .sub-title {
@@ -122,19 +132,26 @@ body {
 }
 
 .pagination {
+  margin-top: 20px;
   justify-content: center;
 }
 .pagination>li>a {
   border: none;
-  color: #696969 !important;
+  color: #37404D !important;
 }
 
 .pagination>.active>a {
-  background-color: #81c8cc !important;
+  background-color: #6E7F99 !important;
 }
 
 .pagination>li>a:hover {
-background-color: #81c8cc !important;
+background-color: #8DA3C4 !important;
+}
+
+#back {
+  position: fixed;
+  right: 40px;
+  bottom: 80px;
 }
 
 footer {

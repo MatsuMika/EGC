@@ -23,23 +23,19 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-9 offset-md-2">
-      <%= render "posts/index_form", posts: @user.posts %>
-    </div>
+    <%= render "posts/index_form", posts: @user.posts %>
   </div>
   <% if @user==current_user %>
     <% if @favorite_list.present? %>
       <div class="row">
         <div class="col-md-2 text-center">
-            <h2 class="title">
-              <strong><i class="fas fa-heart fa-sm heart-red"></i> 一覧</strong>
-            </h2>
+          <h2 class="title">
+            <strong><i class="fas fa-heart fa-sm heart-red"></i> 一覧</strong>
+          </h2>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-9 offset-md-2">
-          <%= render "posts/index_form", posts: @favorite_list %>
-        </div>
+        <%= render "posts/index_form", posts: @favorite_list %>
       </div>
     <% end %>
   <% end %>

@@ -29,11 +29,12 @@
         </div>
       </div>
       <div class="row">
-        <div class ="col-md-11">
-          <%= render "posts/index_form", posts: @posts %>
-          <%= paginate @posts %>
-        </div>
+        <%= render "posts/index_form", posts: @posts %>
+      </div>
+      <div>
+        <%= paginate @posts %>
       </div>
     </div>
+
   </div>
 </div>
