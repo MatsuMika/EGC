@@ -73,5 +73,9 @@
 - 画面トップへスクロールする機能(jQuery)
 - ページネーション機能(kaminari)
 
+### 使用上の注意
+実在するメールアドレスでの登録をお願いします。<br>
+※ ActionMailer使用のため
+
 ## 使用素材
 o-dan：<https://o-dan.net/ja/>
