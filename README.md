@@ -45,15 +45,13 @@
 ## AWS構成図
 <https://app.diagrams.net/#G1Q1tSG7WD1F0LARBP3kWhrv_LCU53cKGi>
 
-## 動作環境
+## 環境
 - デプロイ：AWS,EC2,S3,AMI,Cloud Watch,RDS(MySQL),Route53
+- Capistrano
 - Web server: Nginx
 - 言語：HTML,CSS,JavaScript,Ruby
 - JSライブラリ：jQuery
 - フレームワーク：Ruby on Rails 5.2.4
-- Capistrano
-
-## 開発環境
 - 仮想マシン：Vagrant,VirtualBox
 
 ## 機能一覧
@@ -74,7 +72,7 @@
 - ページネーション機能(kaminari)
 
 ### 使用上の注意
-実在するメールアドレスでの登録をお願いします。<br>
+実在するメールアドレスでの登録をお願い致します。<br>
 ※ ActionMailer使用のため
 
 ## 使用素材
