@@ -9,28 +9,23 @@
           <h5>でも大丈夫!!</h5>
         <div class="main-visual-headline">
           <h2>ポートフォリオを<br>
-            作成したい・作成した なら<strong>E.G.C.</strong>で<br>
-            繋がろう！</h2>
+            作成したい・作成した なら<strong>E.G.C.</strong>で繋がろう！</h2>
         </div>
         <div class="main-centense">
-          <P>
+          <p>
             ポートフォリオを投稿・閲覧！<br>
             感想や質問によって同じ志を持つ人と繋がることができる場です。<br>
             モチベーションUPや自作品のインスピレーション等、<br>
             あなたの成長のきっかけに！
-          </P>
+          </p>
 
           <% unless user_signed_in? %>
-            <P><%= link_to '新規登録(無料)', new_user_registration_path, class: "btn btn-outline-danger btn-lg" %>
-            <%= link_to 'ログイン', new_user_session_path, class: "btn btn-outline-success btn-lg" %></P>
+            <p><%= link_to '新規登録(無料)', new_user_registration_path, class: "btn btn-outline-danger btn-lg" %>
+            <%= link_to 'ログイン', new_user_session_path, class: "btn btn-outline-success btn-lg" %></p>
+            <p><small>※ ログインしていない場合は、[<i class="fas fa-home"></i> About 作品一覧]のみご利用が可能です</small></p>
           <% end %>
-          <P><%= link_to 'とりあえず作品を見てみる', posts_path, class: "btn btn-outline-info btn-lg" %><br>
-          <small>※ ログインしていない場合は、作品一覧の閲覧のみご利用が可能です</small>
-          </P>
+          <%= link_to 'とりあえず作品を見てみる', posts_path, class: "btn btn-outline-info btn-lg" %>
         </div>
       </div>
     </div>
   </div>
-
-
-
