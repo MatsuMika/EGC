@@ -1,31 +1,33 @@
-  <div class ="main-visual">
-    <div class ="main-visual-text">
-      <div class="main-visual-centence">
-          <p>"ポートフォリオ"作成してみたけど、<br>
-          作品が眠ったまま...<br>
-          公開できるようなレベルじゃないし...<br>
-          作成しようと思ってはいるけどイメージが湧かない...
-          </p>
-          <h5>でも大丈夫!!</h5>
-        <div class="main-visual-headline">
-          <h2>ポートフォリオを<br>
-            作成したい・作成した なら<strong>E.G.C.</strong>で繋がろう！</h2>
-        </div>
-        <div class="main-centense">
-          <p>
-            ポートフォリオを投稿・閲覧！<br>
-            感想や質問によって同じ志を持つ人と繋がることができる場です。<br>
-            モチベーションUPや自作品のインスピレーション等、<br>
-            あなたの成長のきっかけに！
-          </p>
+<div class ="main-visual">
+  <div class ="main-visual-text">
+    <div class="main-visual-centence">
+        <p>"ポートフォリオ"作成してみたけど、<br>
+        作品が眠ったまま...<br>
+        公開できるようなレベルじゃないし...<br>
+        作成しようと思ってはいるけどイメージが湧かない...
+        </p>
+        <h5>でも大丈夫!!</h5>
+      <div class="main-visual-headline">
+        <h2>ポートフォリオを<br>
+          作成したい・作成した なら<br>
+          <strong>E.G.C.</strong>で繋がろう！</h2>
+      </div>
+      <div class="main-centense">
+        <p>
+          ポートフォリオの投稿・閲覧<br>
+          同じ志を持つ人と繋がることができる場です<br>
+          モチベーションUPや自作品のインスピレーション等、<br>
+          あなたの成長のきっかけに！
+        </p>
 
-          <% unless user_signed_in? %>
-            <p><%= link_to '新規登録(無料)', new_user_registration_path, class: "btn btn-outline-danger btn-lg" %>
-            <%= link_to 'ログイン', new_user_session_path, class: "btn btn-outline-success btn-lg" %></p>
-            <p><small>※ ログインしていない場合は、[<i class="fas fa-home"></i> About 作品一覧]のみご利用が可能です</small></p>
-          <% end %>
-          <%= link_to 'とりあえず作品を見てみる', posts_path, class: "btn btn-outline-info btn-lg" %>
-        </div>
+        <% unless user_signed_in? %>
+          <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "btn btn-info btn-lg" %><br>
+          <%= link_to '新規登録(無料)', new_user_registration_path, class: "btn btn-outline-danger btn-lg" %>
+          <%= link_to 'ログイン', new_user_session_path, class: "btn btn-outline-success btn-lg" %>
+          <p><small>※ ログインしていない場合は、[<i class="fas fa-home"></i> About 作品一覧]のみご利用が可能です</small></p>
+        <% end %>
+        <%= link_to 'とりあえず作品を見てみる', posts_path, class: "btn btn-outline-info btn-lg" %>
       </div>
     </div>
   </div>
+</div>

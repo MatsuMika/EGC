@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_guest, only: :update
 	before_action :ensure_correct_user, only: [:edit, :update]
 
   def show
@@ -20,13 +21,20 @@ class UsersController < ApplicationController
     else
       render "edit"
     end
-   end
+  end
 
 	private
+    def user_params
+      params.require(:user).permit(:name, :email, :nick_name, :introduction, :avatar)
+    end
 
-		def user_params
-		params.require(:user).permit(:name, :email, :nick_name, :introduction, :avatar)
-		end
+    def check_guest
+      @user = User.find(params[:id])
+      if @user.email == ENV['GUEST_EMAIL']
+        flash.now[:alert] = "ゲストユーザーのアカウント変更はできません"
+        render "edit"
+      end
+    end
 
 		def ensure_correct_user
 			@user = User.find(params[:id])

@@ -55,7 +55,21 @@ body {
 }
 
 .container-fluid {
+  margin-top: 40px;
   padding: 40px;
+}
+
+.alert {
+  margin-top: 20px;
+  font-size: 25px;
+  color: #ffd900;
+  text-align: center;
+}
+
+.notice {
+  margin-top: 20px;
+  color: #1dc1d6;
+  text-align: center;
 }
 
 .heart-red {

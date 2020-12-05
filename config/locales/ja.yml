@@ -41,6 +41,11 @@ ja:
         source_code_url: "ソースコードURL"
         message: "ひとこと"
         development_environment_text: "開発環境"
+  devise:
+    sessions:
+      signed_in: "ログインしました"
+      signed_out: "ログアウトしました"
+      already_signed_out: "既にログアウトされています"
   helpers:
     select:
       prompt: 選択してください

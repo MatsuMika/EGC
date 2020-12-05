@@ -1,4 +1,6 @@
 <div class="container-fluid">
+  <div class="notice"><%= flash.notice %></div>
+
   <div class="row">
     <div class ="col-md-3 offset-md-1">
       <%= image_tag @user.avatar.thumb.url.to_s, :size =>'200x200' ,class: "rounded-circle" %>
