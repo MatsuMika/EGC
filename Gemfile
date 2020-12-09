@@ -73,8 +73,9 @@ gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari','~> 1.2.1'
-
 gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
+
 group :production do
   gem 'fog-aws'
   gem 'mysql2'
