@@ -75,6 +75,7 @@ gem 'mini_magick'
 gem 'kaminari','~> 1.2.1'
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
+gem 'omniauth'
 
 group :production do
   gem 'fog-aws'

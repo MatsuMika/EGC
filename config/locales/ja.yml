@@ -46,6 +46,10 @@ ja:
       signed_in: "ログインしました"
       signed_out: "ログアウトしました"
       already_signed_out: "既にログアウトされています"
+    omniauth_callbacks:
+      user:
+        success: "%{kind}アカウント認証に成功しました"
+        failure: "%{kind} アカウント認証に失敗しました/理由：（%{reason}）"
   helpers:
     select:
       prompt: 選択してください

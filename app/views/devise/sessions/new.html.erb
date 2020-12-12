@@ -56,10 +56,14 @@
 
   <div class="row">
     <div class="col-md-5 offset-md-4 text-center">
-      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-        <div>まだアカウントをお持ちでない方は<strong><%= link_to "新規登録", new_registration_path(resource_name) %></strong></div>
-        <small>*パスワードを忘れた方は【xxxxxx＠xxxxx.com】までお問い合わせください</small>
-      <% end %>
+      <div>まだアカウントをお持ちでない方は
+        <strong><%= link_to "新規登録", new_registration_path(resource_name) %></strong>
+      </div>
+      <p>or</p>
+        <% resource_class.omniauth_providers.each do |provider| %>
+          <%= link_to "#{OmniAuth::Utils.camelize(provider)}認証", omniauth_authorize_path(resource_name, provider),class: "btn btn-warning btn-block" %>
+        <% end %>
     </div>
   </div>
+
 </div>
