@@ -5,7 +5,7 @@ ActiveAdmin.register Post do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-   permit_params :user_id, :title, :subtitle, :post_image, :portfolio_url, :source_code_url, :body, :message, :development_environment_text
+  #permit_params :user_id, :title, :subtitle, :post_image, :portfolio_url, :source_code_url, :body, :message, :development_environment_text
   #
   # or
   #
@@ -14,5 +14,38 @@ ActiveAdmin.register Post do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
+  index do
+    selectable_column
+    id_column
+    column :user
+    column :title
+    column :subtitle
+    column :body
+    column :development_environment_text
+    column :message
+    column :created_at
+    column :updated_at
+    actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :user
+      row :title
+      row :subtitle
+      row :body
+      row :development_environment_text
+      row :message
+      row :portfolio_url
+      row :source_code_url
+      row :created_at
+      row :updated_at
+      row :post_image do
+        image_tag(post.post_image.url)
+      end
+    end
+  end
 
 end
