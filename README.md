@@ -24,7 +24,7 @@
 独りでなはく人と繋がりを持つことで、開発をより楽しみながら成長を続けられる場があればと考えました。<br>
 
 ### ターゲットユーザ
-開発エンジニアを目指して頑張る人〜駆け出しエンジニアを優しく応援したい開発エンジニア
+開発エンジニアを目指して頑張る人〜駆け出しエンジニアを応援したい開発エンジニア
 
 ### 主な利用シーン
 以下のような悩みや思いに応えます。
@@ -45,36 +45,35 @@
 ## AWS構成図
 <https://app.diagrams.net/#G1Q1tSG7WD1F0LARBP3kWhrv_LCU53cKGi>
 
-## 環境
-- デプロイ：AWS,EC2,S3,AMI,Cloud Watch,RDS(MySQL),Route53
-- Capistrano
-- Web server: Nginx
-- 言語：HTML,CSS,JavaScript,Ruby
+## 使用した技術
+- 仮想マシン：Vagrant,VirtualBox
+- AWS：EC2,S3,AMI,Cloud Watch,RDS(MySQL),Route53,Nginx
+- 自動デプロイ：Capistrano
+- 言語：HTML,SCSS,JavaScript,Ruby 2.5.7
 - JSライブラリ：jQuery
 - フレームワーク：Ruby on Rails 5.2.4
-- 仮想マシン：Vagrant,VirtualBox
+- バリデーションテスト：RSpec
+- その他：Ajax,API(google)
 
 ## 機能一覧
-- ユーザー登録、ログイン機能(devise)
+- ユーザー登録、ログイン機能(devise,omniauth,omniauth-google-oauth2)
 - 投稿機能
   - 画像アップロード機能(carrierwave,mini-magick,fog-aws)
-  - バリデーションテスト(RSpec)
 - 検索機能
 - いいね機能
-  - 非同期通信(Ajax)
+  - Ajax
 - コメント機能
-  - 非同期通信(Ajax)
-  - コメントの通知機能(ActionMailer)
+  - Ajax
+  - コメント通知(ActionMailer)
 - 返信機能
-  - 非同期通信(Ajax)
-  - 返信の通知機能(ActionMailer)
-- 画面トップへスクロールする機能(jQuery)
+  - Ajax
+  - 返信通知(ActionMailer)
+- 画面トップへスクロールするアイコン(jQuery)
 - ページネーション機能(kaminari)
 
 ### 注意事項
 #### 使用ユーザーについて
-ゲストログイン or 実在するメールアドレスでの登録をお願い致します。<br>
-※ゲストログインのアカウント編集画面へはアクセス頂けますが、<br>「アカウント情報の「変更」については制限しております
+ゲストログイン or 実在するメールアドレスでの登録をお願い致します。
 
 ## 使用素材
 o-dan：<https://o-dan.net/ja/>
