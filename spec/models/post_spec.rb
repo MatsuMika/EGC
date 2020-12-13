@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Postモデルのテスト', type: :model do
   describe 'バリデーションのテスト' do
-    let(:user) { create(:user) }
-    let!(:post) { build(:post, user_id: user.id) }
+    let!(:post) { build(:post) }
 
     context 'titleカラム' do
       it '空欄でないこと' do
@@ -66,22 +65,24 @@ RSpec.describe 'Postモデルのテスト', type: :model do
       end
     end
     context 'messageカラム' do
-    it '200文字以下であること' do
-      post.message = Faker::Lorem.characters(number:200)
-      expect(post.valid?).to eq true;
-    it '200文字以下であること' do
-      post.message = Faker::Lorem.characters(number:201)
-      expect(post.valid?).to eq false;
+      it '200文字以下であること' do
+        post.message = Faker::Lorem.characters(number:200)
+        expect(post.valid?).to eq true;
+      end
+      it '200文字以下であること' do
+        post.message = Faker::Lorem.characters(number:201)
+        expect(post.valid?).to eq false;
+      end
     end
-  end
     context 'development_environment_textカラム' do
-    it '200文字以下であること' do
-      post.development_environment_text = Faker::Lorem.characters(number:200)
-      expect(post.valid?).to eq true;
-    end
-    it '200文字以下であること' do
-      post.development_environment_text = Faker::Lorem.characters(number:201)
-      expect(post.valid?).to eq false;
+      it '800文字以下であること' do
+        post.development_environment_text = Faker::Lorem.characters(number:800)
+        expect(post.valid?).to eq true;
+      end
+      it '800文字以下であること' do
+        post.development_environment_text = Faker::Lorem.characters(number:801)
+        expect(post.valid?).to eq false;
+      end
     end
   end
 
