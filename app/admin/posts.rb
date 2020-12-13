@@ -43,7 +43,7 @@ ActiveAdmin.register Post do
       row :created_at
       row :updated_at
       row :post_image do
-        image_tag(post.post_image.url)
+        image_tag(post.post_image.thumb.url)
       end
     end
   end

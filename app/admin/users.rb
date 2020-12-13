@@ -48,7 +48,7 @@ ActiveAdmin.register User do
       row :current_sign_in_ip
       row :last_sign_in_ip
       row :avatar do
-        image_tag(user.avatar.url)
+        image_tag(user.avatar.thumb.url)
       end
     end
       panel "PF投稿一覧" do
