@@ -2,17 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.main-visual {
+.main-visual-cover {
 	width: 100%;
-	height: 100%;
-	background-image: image-url('manhattan-3866140_1920.jpg');
-	background-size: cover;
-}
+  height: 800px;
+	background-color: #000;
+	}
 
-.main-visual-text {
-	height: 100%;
-	max-width: 700px;
-	background-color:rgba(0,0,0,0.8);
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: #000;
 }
 
 .main-visual-centence {
@@ -25,8 +27,12 @@
 	padding-top: 5%;
 }
 
+.main-visual {
+	margin-top: 200px;
+}
+
 .main-centense {
-	padding: 20px;
+	padding-top: 100px;
 }
 
 .about-main-title {
@@ -75,7 +81,7 @@
 	text-align: center;
 }
 
-.button {
+.button-index {
   display: inline-block;
   margin-top: 2px;
   padding: 7px 20px;
@@ -87,9 +93,10 @@
   border-bottom: solid 3px #17a2b8;
 }
 
-.button:hover {
+.button-index:hover {
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
   border-bottom: none;
 }
+

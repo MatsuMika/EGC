@@ -1,19 +1,27 @@
-<div class ="main-visual">
-  <div class ="main-visual-text">
-    <div class="main-visual-centence">
-      <div class="main-visual-headline">
-        <h2>ポートフォリオを<br>
-          作成したい・作成した なら<br>
-          <strong>E.G.C.</strong> で繋がろう！</h2>
+<div class="main-visual-cover">
+  <canvas class="background"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js">
+  </script>
+  <div class="container-fluid">
+    <div class="row main-visual">
+      <div class="col-md-6 offset-md-3 text-center">
+        <h1>E.G.C.</h1>
       </div>
-      <div class="main-centense">
-        <p>
-          「作品をこのまま眠らせたくない」そんな思いはありませんか？
-          E.G.C.はポートフォリオの投稿・閲覧から、<br>
-          同じ志を持つ人と繋がることができる場です！<br>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        「作品をこのまま眠らせたくない」そんな思いはありませんか？<br>
+          E.G.C.はポートフォリオの投稿・閲覧から、
+          同じ志を持つ人と繋がることができる場です！
         </p>
-
-        <% unless user_signed_in? %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center main-centense">
+        <% if user_signed_in? %>
+          <%= link_to '作品を見てみる！！', posts_path, class: "btn btn-outline-info btn-lg" %><br>
+          <%= link_to 'マイページ', new_user_session_path, class: "btn btn-outline-warning btn-lg" %>
+        <% else %>
           <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "btn btn-outline-info btn-lg" %><br>
           <%= link_to '新規登録', new_user_registration_path, class: "btn btn-outline-danger btn-lg" %>
           <%= link_to 'ログイン', new_user_session_path, class: "btn btn-outline-success btn-lg" %><br>
@@ -25,4 +33,5 @@
       </div>
     </div>
   </div>
+
 </div>
