@@ -149,6 +149,7 @@ body {
   margin-top: 20px;
   justify-content: center;
 }
+
 .pagination>li>a {
   border: none;
   color: #37404D !important;
@@ -159,7 +160,7 @@ body {
 }
 
 .pagination>li>a:hover {
-background-color: #8DA3C4 !important;
+  background-color: #8DA3C4 !important;
 }
 
 #back {
@@ -182,6 +183,7 @@ footer {
   text-align: left;
   padding: 10px 0 0 10px;
 }
+
 .copyright {
   text-align: center;
 }
